@@ -15,7 +15,7 @@ You can access it with this [link.](https://spotify-minimalist.vercel.app/)
 ## Technologies
 
 - React
-- SASS
+- HTML/SASS
 - Spotify Web API
 
 
