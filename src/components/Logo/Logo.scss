@@ -1,0 +1,9 @@
+.logo img {
+  height: 60px;
+  margin-bottom: 20px;
+
+  @media (min-width: 768px) {
+    height: 80px;
+    margin-bottom: 35px;    
+  }
+}

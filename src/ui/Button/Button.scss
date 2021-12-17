@@ -1,0 +1,32 @@
+.button {
+  /* background-color: $green; */
+  /* font-weight: $medium-font; */
+  align-items: center;
+  background-color:#02FF86;
+  border-radius: 10px;
+  border: none;
+  color: #232323;  
+  cursor: pointer;
+  display: flex;
+  font-family: 'Hind', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  justify-content: center;
+  padding: 2px;
+  transition: all 0.2s ease-in-out;
+  width: 80px;
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+    width: 100px;
+    padding: 4px;
+ 
+  }
+
+
+}
+
+.button:hover {
+  background-color: #fff;
+  transform: scale(1.1);  
+}

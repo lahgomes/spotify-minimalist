@@ -4,13 +4,13 @@
   }
 };
 
-@mixin media-sm {
+@mixin media-md {
   @media (min-width: $md) {
     @content    
   }
 };
 
-@mixin media-sm {
+@mixin media-lg {
   @media (min-width: $lg) {
     @content    
   }
