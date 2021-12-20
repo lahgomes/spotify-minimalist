@@ -1,0 +1,11 @@
+@import '../../styles/_config';
+
+.logo__img {
+  height: px-to-rem(60);
+  margin-bottom: px-to-rem(20);
+
+  @media (min-width: $md) {
+    height: px-to-rem(80);
+    margin-bottom: px-to-rem(35);    
+  }
+}
