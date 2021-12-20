@@ -1,32 +1,29 @@
+@import '../../styles/_config';
+
 .button {
-  /* background-color: $green; */
-  /* font-weight: $medium-font; */
-  align-items: center;
-  background-color:#02FF86;
-  border-radius: 10px;
+  background-color: $green; 
+  align-items: center;  
+  border-radius: px-to-rem(10);
   border: none;
-  color: #232323;  
+  color: $black;  
   cursor: pointer;
   display: flex;
   font-family: 'Hind', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: px-to-rem(14);
+  font-weight: $semib-font;
   justify-content: center;
-  padding: 2px;
+  padding: px-to-rem(2);
   transition: all 0.2s ease-in-out;
-  width: 80px;
+  width: px-to-rem(80);
 
-  @media (min-width: 768px) {
-    font-size: 18px;
-    width: 100px;
-    padding: 4px;
- 
+  @media (min-width: $md) {
+    font-size: px-to-rem(18);
+    width:px-to-rem(100);
+    padding: px-to-rem(4); 
   }
 
-
-}
-
-.button:hover {
-  background-color: #fff;
-  transform: scale(1.1);  
+  &:hover {
+    background-color: $white;
+    transform: scale(1.1);  
+  }
 }

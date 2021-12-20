@@ -8,8 +8,7 @@ const Login = () => (
   <div className="container">
     <Logo />
     
-    <Button />
-    
+    <Button />    
   </div>
 );
 

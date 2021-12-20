@@ -5,7 +5,7 @@ import './Logo.scss';
 
 const Logo = () => (
   <figure className="logo">
-      <img src={logo} alt="logo do spotify" />
+      <img className="logo__img"src={logo} alt="logo do spotify" />
   </figure>
 
 );

@@ -1,9 +1,11 @@
-.logo img {
-  height: 60px;
-  margin-bottom: 20px;
+@import '../../styles/_config';
 
-  @media (min-width: 768px) {
-    height: 80px;
-    margin-bottom: 35px;    
+.logo__img {
+  height: px-to-rem(60);
+  margin-bottom: px-to-rem(20);
+
+  @media (min-width: $md) {
+    height: px-to-rem(80);
+    margin-bottom: px-to-rem(35);    
   }
 }
