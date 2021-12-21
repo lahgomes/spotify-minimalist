@@ -1,0 +1,22 @@
+@import '../../styles/_config';
+
+.home {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  color: $white;
+  font-size: px-to-rem(40);
+  padding: px-to-rem(15);
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  background-color: $white;
+  border-radius:  px-to-rem(10);
+  padding: 0 10px;
+}
