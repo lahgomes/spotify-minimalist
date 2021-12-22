@@ -1,8 +1,8 @@
 @import '../../styles/_config';
 
 .button {
-  background-color: $green; 
   align-items: center;  
+  background-color: $green; 
   border-radius: px-to-rem(10);
   border: none;
   color: $black;  
@@ -18,8 +18,8 @@
 
   @media (min-width: $md) {
     font-size: px-to-rem(18);
-    width:px-to-rem(100);
     padding: px-to-rem(4); 
+    width:px-to-rem(100);
   }
 
   &:hover {

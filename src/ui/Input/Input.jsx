@@ -5,14 +5,8 @@ const Input = ({ type = "search", placeholder }) => (
   <input 
     type={type} 
     placeholder={placeholder}
-    className="search__input" 
-    
+    className="search__input"     
   />
 )
 
 export default Input;
-
-
-
-
-

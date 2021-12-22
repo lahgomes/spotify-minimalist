@@ -7,4 +7,9 @@
   outline: none;
   padding: px-to-rem(8);
   width:  px-to-rem(200);
+
+  @media (min-width: $md) {
+    padding: px-to-rem(6);
+    width:  px-to-rem(300);
+  }
 }
