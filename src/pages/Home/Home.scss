@@ -1,1 +1,7 @@
 @import '../../styles/_config';
+
+.section__title {
+  color: $white;
+  padding: px-to-rem(15);
+  font-size: px-to-rem(16);
+}

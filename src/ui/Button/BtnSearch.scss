@@ -7,5 +7,9 @@
   color: $gray;
   cursor: pointer;
   display: flex;
-  justify-content: center;  
+  justify-content: center; 
+  
+  & :hover {
+    color: $green;
+  }
 }
