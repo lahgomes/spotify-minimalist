@@ -4,6 +4,12 @@
   }
 };
 
+@mixin media-xs {
+  @media (min-width: $xs) {
+    @content
+  }
+};
+
 @mixin media-md {
   @media (min-width: $md) {
     @content    

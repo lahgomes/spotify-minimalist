@@ -1,26 +1,26 @@
 @import '../../styles/_config';
 
 .card {
-  background-color: $card-green;
+  //background-color: $card-green;
   border-radius: px-to-rem(8);
   height: px-to-rem(150);
   margin: px-to-rem(15);
   width: px-to-rem(140);
   position: relative;
-  overflow: hidden;  
+  overflow: hidden;
  
   &__img {
     height: px-to-rem(85);
     position: absolute;
     right: 0;
     bottom: 0;
-    transform: rotate(24deg) translate(10%, -3%);
+    transform: rotate(24deg) translate(13%, 3%);
     width: px-to-rem(85);    
   }
 
   &__title {
     color: $white;
-    font-size: px-to-rem(20);
+    font-size: px-to-rem(18);
     font-weight: $semib-font;
     padding: px-to-rem(8);
     line-height: px-to-rem(26);

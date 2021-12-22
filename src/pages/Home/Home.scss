@@ -1,7 +1,19 @@
 @import '../../styles/_config';
 
-.section__title {
+.main__title {
   color: $white;
   padding: px-to-rem(15);
   font-size: px-to-rem(16);
+}
+
+.wrapper-category {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  @media(min-width: $xs) {
+    justify-content: flex-start;
+  }
+
 }
