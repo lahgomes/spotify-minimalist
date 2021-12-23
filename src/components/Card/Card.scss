@@ -1,19 +1,19 @@
 @import '../../styles/_config';
 
 .card {
-  //background-color: $card-green;
   border-radius: px-to-rem(8);
+  cursor: pointer;
   height: px-to-rem(150);
-  margin: px-to-rem(15);
-  width: px-to-rem(140);
-  position: relative;
+  margin: px-to-rem(12);
   overflow: hidden;
+  position: relative;
+  width: px-to-rem(140);
  
   &__img {
+    bottom: 0;
     height: px-to-rem(85);
     position: absolute;
     right: 0;
-    bottom: 0;
     transform: rotate(24deg) translate(13%, 3%);
     width: px-to-rem(85);    
   }
@@ -22,8 +22,8 @@
     color: $white;
     font-size: px-to-rem(18);
     font-weight: $semib-font;
-    padding: px-to-rem(8);
     line-height: px-to-rem(26);
+    padding: px-to-rem(8);
   }
 
 }

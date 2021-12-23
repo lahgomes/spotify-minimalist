@@ -2,14 +2,14 @@
 
 .main__title {
   color: $white;
-  padding: px-to-rem(15);
   font-size: px-to-rem(16);
+  padding: px-to-rem(15);
 }
 
 .wrapper-category {
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
 
   @media(min-width: $xs) {
