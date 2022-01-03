@@ -13,32 +13,32 @@ const Home = () => {
   ];
 
   const items = [
-    {title:'The Best of Pop', url:'https://i.scdn.co/image/ab67706f00000002a418f22aabf49749111db0c0', color:'#27856a',category:'favorites'},
-    {title:'Best of 2021', url:'https://i.scdn.co/image/ab67706f000000023ba7e5967c8a2ba24c37e3dc', color:'#3d91f4',category:'favorites'},
-    {title:'Classic Rock', url:'https://i.scdn.co/image/ab67706f000000026705dfb8f5445fa4fdddf374', color:'#ffa42b',category:'favorites'},
-    {title:'Indie', url:'https://i.scdn.co/image/ab67616d00001e0296620e04b099b836684a3312', color:'#f15e6c',category:'favorites'},
-    {title:'The Best of Pop', url:'https://i.scdn.co/image/ab67706f00000002a418f22aabf49749111db0c0', color:'#27856a',category:'favorites'},
-    {title:'Best of 2021', url:'https://i.scdn.co/image/ab67706f000000023ba7e5967c8a2ba24c37e3dc', color:'#3d91f4',category:'favorites'},
-    {title:'Classic Rock', url:'https://i.scdn.co/image/ab67706f000000026705dfb8f5445fa4fdddf374', color:'#ffa42b',category:'favorites'},
-    {title:'Indie', url:'https://i.scdn.co/image/ab67616d00001e0296620e04b099b836684a3312', color:'#f15e6c',category:'favorites'},
+    {title:'The Best of Pop', url:'https://i.scdn.co/image/ab67706f00000002a418f22aabf49749111db0c0', color:'#27856a', category:'favorites'},
+    {title:'Best of 2021', url:'https://i.scdn.co/image/ab67706f000000023ba7e5967c8a2ba24c37e3dc', color:'#3d91f4', category:'favorites'},
+    {title:'Classic Rock', url:'https://i.scdn.co/image/ab67706f000000026705dfb8f5445fa4fdddf374', color:'#ffa42b', category:'favorites'},
+    {title:'Indie', url:'https://i.scdn.co/image/ab67616d00001e0296620e04b099b836684a3312', color:'#f15e6c', category:'favorites'},
+    {title:'The Best of Pop', url:'https://i.scdn.co/image/ab67706f00000002a418f22aabf49749111db0c0', color:'#27856a', category:'favorites'},
+    {title:'Best of 2021', url:'https://i.scdn.co/image/ab67706f000000023ba7e5967c8a2ba24c37e3dc', color:'#3d91f4', category:'favorites'},
+    {title:'Classic Rock', url:'https://i.scdn.co/image/ab67706f000000026705dfb8f5445fa4fdddf374', color:'#ffa42b', category:'favorites'},
+    {title:'Indie', url:'https://i.scdn.co/image/ab67616d00001e0296620e04b099b836684a3312', color:'#f15e6c', category:'favorites'},
 
-    {title:'Modus Operandi', url:'https://i.scdn.co/image/ab67656300005f1f58c7a48f09adfdd65127304b', color:'#1e3264',category:'podcasts'},
-    {title:'Não Inviabilize', url:'https://i.scdn.co/image/9dbecec261183fa7479bf347d2cd9c9fc025ae6a', color:'#b49bc8',category:'podcasts'},
-    {title:'Wanda Experimenta', url:'https://i.scdn.co/image/ab67706c0000da8409b724bc0ce12a9d25978739', color:'#f15e6c',category:'podcasts'},
-    {title:'Estamos bem?', url:'https://i.scdn.co/image/ab67656300005f1feda422b90c8173a72b48947c', color:'#0d72ea',category:'podcasts'},
-    {title:'Modus Operandi', url:'https://i.scdn.co/image/ab67656300005f1f58c7a48f09adfdd65127304b', color:'#1e3264',category:'podcasts'},
-    {title:'Não Inviabilize', url:'https://i.scdn.co/image/9dbecec261183fa7479bf347d2cd9c9fc025ae6a', color:'#b49bc8',category:'podcasts'},
-    {title:'Wanda Experimenta', url:'https://i.scdn.co/image/ab67706c0000da8409b724bc0ce12a9d25978739', color:'#f15e6c',category:'podcasts'},
-    {title:'Estamos bem?', url:'https://i.scdn.co/image/ab67656300005f1feda422b90c8173a72b48947c', color:'#0d72ea',category:'podcasts'},
+    {title:'Modus Operandi', url:'https://i.scdn.co/image/ab67656300005f1f58c7a48f09adfdd65127304b', color:'#1e3264', category:'podcasts'},
+    {title:'Não Inviabilize', url:'https://i.scdn.co/image/9dbecec261183fa7479bf347d2cd9c9fc025ae6a', color:'#b49bc8', category:'podcasts'},
+    {title:'Wanda Experimenta', url:'https://i.scdn.co/image/ab67706c0000da8409b724bc0ce12a9d25978739', color:'#f15e6c', category:'podcasts'},
+    {title:'Estamos bem?', url:'https://i.scdn.co/image/ab67656300005f1feda422b90c8173a72b48947c', color:'#0d72ea', category:'podcasts'},
+    {title:'Modus Operandi', url:'https://i.scdn.co/image/ab67656300005f1f58c7a48f09adfdd65127304b', color:'#1e3264', category:'podcasts'},
+    {title:'Não Inviabilize', url:'https://i.scdn.co/image/9dbecec261183fa7479bf347d2cd9c9fc025ae6a', color:'#b49bc8', category:'podcasts'},
+    {title:'Wanda Experimenta', url:'https://i.scdn.co/image/ab67706c0000da8409b724bc0ce12a9d25978739', color:'#f15e6c', category:'podcasts'},
+    {title:'Estamos bem?', url:'https://i.scdn.co/image/ab67656300005f1feda422b90c8173a72b48947c', color:'#0d72ea', category:'podcasts'},
 
-    {title:'The Best of Pop', url:'https://i.scdn.co/image/ab67706f00000002a418f22aabf49749111db0c0', color:'#27856a',category:'browse'},
-    {title:'Best of 2021', url:'https://i.scdn.co/image/ab67706f000000023ba7e5967c8a2ba24c37e3dc', color:'#3d91f4',category:'browse'},
-    {title:'Classic Rock', url:'https://i.scdn.co/image/ab67706f000000026705dfb8f5445fa4fdddf374', color:'#ffa42b',category:'browse'},
-    {title:'Indie', url:'https://i.scdn.co/image/ab67616d00001e0296620e04b099b836684a3312', color:'#f15e6c',category:'browse'},
-    {title:'The Best of Pop', url:'https://i.scdn.co/image/ab67706f00000002a418f22aabf49749111db0c0', color:'#27856a',category:'browse'},
-    {title:'Best of 2021', url:'https://i.scdn.co/image/ab67706f000000023ba7e5967c8a2ba24c37e3dc', color:'#3d91f4',category:'browse'},
-    {title:'Classic Rock', url:'https://i.scdn.co/image/ab67706f000000026705dfb8f5445fa4fdddf374', color:'#ffa42b',category:'browse'},
-    {title:'Indie', url:'https://i.scdn.co/image/ab67616d00001e0296620e04b099b836684a3312', color:'#f15e6c',category:'browse'}    
+    {title:'The Best of Pop', url:'https://i.scdn.co/image/ab67706f00000002a418f22aabf49749111db0c0', color:'#27856a', category:'browse'},
+    {title:'Best of 2021', url:'https://i.scdn.co/image/ab67706f000000023ba7e5967c8a2ba24c37e3dc', color:'#3d91f4', category:'browse'},
+    {title:'Classic Rock', url:'https://i.scdn.co/image/ab67706f000000026705dfb8f5445fa4fdddf374', color:'#ffa42b', category:'browse'},
+    {title:'Indie', url:'https://i.scdn.co/image/ab67616d00001e0296620e04b099b836684a3312', color:'#f15e6c', category:'browse'},
+    {title:'The Best of Pop', url:'https://i.scdn.co/image/ab67706f00000002a418f22aabf49749111db0c0', color:'#27856a', category:'browse'},
+    {title:'Best of 2021', url:'https://i.scdn.co/image/ab67706f000000023ba7e5967c8a2ba24c37e3dc', color:'#3d91f4', category:'browse'},
+    {title:'Classic Rock', url:'https://i.scdn.co/image/ab67706f000000026705dfb8f5445fa4fdddf374', color:'#ffa42b', category:'browse'},
+    {title:'Indie', url:'https://i.scdn.co/image/ab67616d00001e0296620e04b099b836684a3312', color:'#f15e6c', category:'browse'}    
   ];
 
   return (
