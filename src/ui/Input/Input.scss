@@ -1,0 +1,15 @@
+@import '../../styles/_config';
+
+.search__input {
+  border: none;
+  font-family: $primary-font;
+  font-size:  px-to-rem(14);
+  outline: none;
+  padding: px-to-rem(8);
+  width:  px-to-rem(200);
+
+  @media (min-width: $md) {
+    padding: px-to-rem(6);
+    width:  px-to-rem(300);
+  }
+}

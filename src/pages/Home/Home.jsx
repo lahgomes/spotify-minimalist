@@ -1,30 +1,12 @@
 import React from 'react';
+import Header from '../../components/Header/Header';
+
+
 import './Home.scss';
 
 const Home = () => (
-  <div>
-    <h1 className="title">Search</h1>
-    <form className="search">
-    <input className="search__input" type="search" placeholder='Artists, songs os podcasts'/>
-    </form>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <Header />
+  
 );
 
 export default Home;

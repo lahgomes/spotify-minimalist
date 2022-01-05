@@ -6,8 +6,7 @@ import './Login.scss';
 
 const Login = () => (
   <div className="container">
-    <Logo />
-    
+    <Logo />    
     <Button />    
   </div>
 );

@@ -1,0 +1,57 @@
+@import '../../styles/_config';
+
+.header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: px-to-rem(20);   
+
+  @media (min-width: $md) {
+   flex-direction: row;
+   justify-content: space-between;
+  }
+
+  &__title {
+    color: $white;
+    font-size: px-to-rem(40);
+    padding: px-to-rem(15);
+
+    @media (min-width: $md) {
+      display: none;
+    }
+  }
+
+  &__icon {
+    color: $white;
+    cursor: pointer;
+    font-size: px-to-rem(25);
+
+    &--logo {
+      display: none;
+
+      @media (min-width: $md) {
+        cursor: pointer;
+        display: flex;
+        font-size: px-to-rem(35);
+      }
+    }
+  }
+}
+
+.search {
+  align-items: center;
+  background-color: $white;
+  border-radius:  px-to-rem(10);
+  display: flex;
+  padding: 0 px-to-rem(10);
+}
+
+.menu {
+  display: none;
+
+  @media (min-width: $md) {
+    display: flex;
+    gap: px-to-rem(10);    
+  }  
+}

@@ -1,0 +1,11 @@
+@import '../../styles/_config';
+
+.search__btn {
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  color: $gray;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;  
+}
