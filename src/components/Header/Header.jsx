@@ -8,16 +8,18 @@ import { FaSpotify } from "react-icons/fa";
 
 import './Header.scss';
 
-const Header = () => (
+const Header = ({ searchKey, handleSearchKey, handleSearchArtists }) => (
   <header className="header">
     <h1 className="header__title">Search</h1>
     <div className="icon-spotify">
       <FaSpotify className="header__icon header__icon--logo"/>
     </div>
-    <form className="search">
+    <form className="search" onSubmit={handleSearchArtists}>
       <Input 
-      type="search"
-      placeholder="Artists, songs os podcasts"   
+        type="search"
+        placeholder="Artists, songs os podcasts" 
+        searchKey={searchKey}
+        handleSearchKey={handleSearchKey}  
       />
       <BtnSearch type="submit" />    
     </form >

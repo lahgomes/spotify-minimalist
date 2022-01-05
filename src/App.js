@@ -1,15 +1,12 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Routes, Route } from "react-router-dom";
 
 import Login from './pages/Login/Login';
 import Home from './pages/Home/Home';
 
-import axios from 'axios';
-
 import './App.scss';
 
 function App() {
-
   const [token, setToken] = useState("")
 
   useEffect(() => {
@@ -23,17 +20,13 @@ function App() {
     }
 
      setToken(token)
-
   },[])
-
-  
-
 
   return (
     <div className="App">
       <Routes>
         <Route exact path="/" element={<Login />}/>
-        <Route path="home" element={<Home />}/>
+        <Route path="home" element={<Home token={token} />}/>
       </Routes>
     </div>
   );

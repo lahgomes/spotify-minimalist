@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 import Header from '../../components/Header/Header';
 import Card from '../../components/Card/Card';
 
 import './Home.scss';
 
-const Home = () => {
+const Home = ({ token }) => {
 
   const categories = [
     {id: 'favorites', title: 'Discover your favorites songs'},
@@ -41,11 +42,48 @@ const Home = () => {
     {title:'Indie', url:'https://i.scdn.co/image/ab67616d00001e0296620e04b099b836684a3312', color:'#f15e6c', category:'browse'}    
   ];
 
+  const [searchKey, setSearchKey] = useState("")
+  const [artists, setArtists] = useState([])
+
+  const handleSearchKey = target => setSearchKey(target.value)
+
+  const handleSearchArtists = async (event) => {
+    event.preventDefault()
+
+    try {
+      const { data } = await axios.get("https://api.spotify.com/v1/search", {
+        headers: {
+          Authorization: `Bearer ${token}`
+        },
+        params: {
+          q: searchKey,
+          type: "artist"
+        }
+      })
+
+      
+
+      console.log(data)
+      
+    } catch (error) {
+      console.log(error)
+    }
+    
+
+
+    //setArtists(data.artists.items)
+  }
+
   return (
     <>
       <main className='main'>
-        <Header />
+        <Header
+          searchKey={searchKey}
+          handleSearchKey={handleSearchKey}
+          handleSearchArtists={handleSearchArtists}
+        />
       </main> 
+
       {
         categories.map((category)=>(
           <section key={category.id}>
