@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Header from '../../components/Header/Header';
 import Card from '../../components/Card/Card';
@@ -45,29 +46,34 @@ const Home = ({ token }) => {
   const [searchKey, setSearchKey] = useState("")
   const [artists, setArtists] = useState([])
 
+  let navigate = useNavigate()
+
   const handleSearchKey = target => setSearchKey(target.value)
 
   const handleSearchArtists = async (event) => {
     event.preventDefault()
 
      try {
-       const {data} = await axios.get("https://api.spotify.com/v1/search", {
-        headers: {
-          Authorization: `Bearer ${token}`
-        },
-        params: {
-          q: searchKey,
-          type: "artist"
-        }
-      })
-      console.log(data)
-     } catch (error) {
-       console.log(error.response)
+      const {data} = await axios.get("https://api.spotify.com/v1/search", {
+      headers: {
+        Authorization: `Bearer ${token}`
+      },
+      params: {
+        q: searchKey,
+        type: "artist"
+      }
 
-       if(error.response.status === 401) {
-         localStorage.removeItem('token')
-       }
-     }
+    })
+      console.log(data)
+
+    } catch (error) {
+      console.log(error.response)
+
+      if(error.response.status === 401) {
+        localStorage.removeItem('token')
+        navigate('/')
+      }
+    }
 
 
     //setArtists(data.artists.items)
