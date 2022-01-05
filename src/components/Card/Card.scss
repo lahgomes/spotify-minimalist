@@ -8,14 +8,14 @@
   overflow: hidden;
   position: relative;
   width: px-to-rem(140);
- 
+   
   &__img {
     bottom: 0;
     height: px-to-rem(85);
     position: absolute;
     right: 0;
     transform: rotate(24deg) translate(13%, 3%);
-    width: px-to-rem(85);    
+    width: px-to-rem(85);  
   }
 
   &__title {
@@ -25,5 +25,4 @@
     line-height: px-to-rem(26);
     padding: px-to-rem(8);
   }
-
 }

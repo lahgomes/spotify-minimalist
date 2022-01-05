@@ -20,7 +20,7 @@ const Header = () => (
       placeholder="Artists, songs os podcasts"   
       />
       <BtnSearch type="submit" />    
-    </form>
+    </form >
     <nav className="menu">
       <MdLibraryMusic className="header__icon" />
       <MdHome className="header__icon"/>

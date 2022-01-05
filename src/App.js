@@ -1,11 +1,34 @@
+import { useState, useEffect } from 'react'
 import { Routes, Route } from "react-router-dom";
 
 import Login from './pages/Login/Login';
 import Home from './pages/Home/Home';
 
+import axios from 'axios';
+
 import './App.scss';
 
 function App() {
+
+  const [token, setToken] = useState("")
+
+  useEffect(() => {
+    const hash = window.location.hash
+    let token = localStorage.getItem("token")
+
+    if (!token && hash) {
+        token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token")).split("=")[1]
+        window.location.hash = ""
+        localStorage.setItem("token", token)
+    }
+
+     setToken(token)
+
+  },[])
+
+  
+
+
   return (
     <div className="App">
       <Routes>
