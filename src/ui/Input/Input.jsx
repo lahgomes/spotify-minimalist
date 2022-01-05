@@ -7,6 +7,6 @@ const Input = ({ type = "search", placeholder }) => (
     placeholder={placeholder}
     className="search__input"     
   />
-)
+);
 
 export default Input;
