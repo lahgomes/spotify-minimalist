@@ -14,8 +14,8 @@ const Header = () => (
     <FaSpotify className="header__icon header__icon--logo"/>
     <form className="search">
       <Input 
-      type="search"
-      placeholder="Artists, songs os podcasts"   
+        type="search"
+        placeholder="Artists, songs or podcasts"   
       />
       <BtnSearch type="submit" />    
     </form>
