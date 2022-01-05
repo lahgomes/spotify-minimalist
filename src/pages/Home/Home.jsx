@@ -45,6 +45,9 @@ const Home = ({ token }) => {
 
   const [searchKey, setSearchKey] = useState("")
   const [artists, setArtists] = useState([])
+  const [tracks, setTracks] = useState([])
+  const [albums, setAlbums] = useState([])
+  const [isLoading, setisLoading] = useState(false)
 
   let navigate = useNavigate()
 
@@ -53,30 +56,39 @@ const Home = ({ token }) => {
   const handleSearchArtists = async (event) => {
     event.preventDefault()
 
+    setisLoading(true) 
+
      try {
       const {data} = await axios.get("https://api.spotify.com/v1/search", {
       headers: {
         Authorization: `Bearer ${token}`
       },
+
       params: {
         q: searchKey,
-        type: "artist"
+        type: "artist,track,album"
       }
-
     })
-      console.log(data)
+
+    setArtists(data.artists.items)
+    setTracks(data.tracks.items)
+    setAlbums(data.albums.items)
+
+    console.log('artistas: ', data.artists.items)
+    console.log('tracks: ', data.tracks.items)
+    console.log('albums: ', data.albums.items)
 
     } catch (error) {
-      console.log(error.response)
+      console.log('erro: ', error.response)
 
       if(error.response.status === 401) {
         localStorage.removeItem('token')
         navigate('/')
       }
+    } finally {
+      setisLoading(false)
     }
-
-
-    //setArtists(data.artists.items)
+    
   }
 
   return (
@@ -88,6 +100,11 @@ const Home = ({ token }) => {
           handleSearchArtists={handleSearchArtists}
         />
       </main> 
+
+
+      {isLoading && <p>Carregando</p>}
+
+      
 
       {
         categories.map((category)=>(
@@ -106,7 +123,9 @@ const Home = ({ token }) => {
             </ul>
           </section>
         ))
-      }      
+      }    
+      
+        
     </>  
   )};
 
