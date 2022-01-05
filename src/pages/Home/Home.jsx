@@ -4,6 +4,8 @@ import axios from 'axios';
 import Header from '../../components/Header/Header';
 import Card from '../../components/Card/Card';
 
+import albumimg from '../../images/album.png'
+
 import './Home.scss';
 
 const Home = ({ token }) => {
@@ -45,7 +47,6 @@ const Home = ({ token }) => {
 
   const [searchKey, setSearchKey] = useState("")
   const [artists, setArtists] = useState([])
-  const [tracks, setTracks] = useState([])
   const [albums, setAlbums] = useState([])
   const [isLoading, setisLoading] = useState(false)
 
@@ -56,27 +57,22 @@ const Home = ({ token }) => {
   const handleSearchArtists = async (event) => {
     event.preventDefault()
 
-    setisLoading(true) 
+    setisLoading(true)
 
      try {
       const {data} = await axios.get("https://api.spotify.com/v1/search", {
-      headers: {
-        Authorization: `Bearer ${token}`
-      },
+        headers: {
+          Authorization: `Bearer ${token}`
+        },
 
-      params: {
-        q: searchKey,
-        type: "artist,track,album"
-      }
-    })
-
-    setArtists(data.artists.items)
-    setTracks(data.tracks.items)
-    setAlbums(data.albums.items)
-
-    console.log('artistas: ', data.artists.items)
-    console.log('tracks: ', data.tracks.items)
-    console.log('albums: ', data.albums.items)
+        params: {
+          q: searchKey,
+          type: "artist,album"
+        }
+      })
+      //TODO: validar quando não existir artista / album
+      setArtists(data.artists.items)    
+      setAlbums(data.albums.items)
 
     } catch (error) {
       console.log('erro: ', error.response)
@@ -87,6 +83,7 @@ const Home = ({ token }) => {
       }
     } finally {
       setisLoading(false)
+      setSearchKey('')
     }
     
   }
@@ -99,15 +96,9 @@ const Home = ({ token }) => {
           handleSearchKey={handleSearchKey}
           handleSearchArtists={handleSearchArtists}
         />
-      </main> 
 
-
-      {isLoading && <p>Carregando</p>}
-
-      
-
-      {
-        categories.map((category)=>(
+        {(artists.length === 0 || albums.length === 0) && (
+          categories.map((category)=>(
           <section key={category.id}>
             <h2 className='main__title'>{category.title}</h2>
             <ul className='wrapper-category'>
@@ -122,10 +113,47 @@ const Home = ({ token }) => {
               ))}
             </ul>
           </section>
-        ))
-      }    
-      
-        
+        )
+        ))}
+
+        {isLoading && <p>Carregando</p>}
+
+        {artists.length > 0 && (          
+          <section>
+            <h2 className='main__title'>Artista</h2>
+            <ul className='wrapper-category'>
+              {artists.map((artist) => (
+                <li key={artist.id}>
+                  <Card 
+                    title={artist.name} 
+                    src={artist.images.length > 0 ? artist.images[1].url : albumimg}
+                    color='#27856a' 
+                    url={artist.external_urls.spotify}
+                  />
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {albums.length > 0 && (
+          <section>
+            <h2 className='main__title'>Álbuns</h2>
+            <ul className='wrapper-category'>
+              {albums.map((album) => (
+                <li key={album.id}>
+                  <Card 
+                    title={album.name} 
+                    src={album.images.length > 0 ? album.images[1].url : albumimg}
+                    color='#f15e6c' 
+                    url={album.external_urls.spotify}
+                  />
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}     
+      </main> 
     </>  
   )};
 

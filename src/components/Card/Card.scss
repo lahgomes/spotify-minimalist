@@ -3,10 +3,13 @@
 .card {
   border-radius: px-to-rem(8);
   cursor: pointer;
+  display: block;
   height: px-to-rem(150);
   margin: px-to-rem(12);
   overflow: hidden;
+  padding-top: px-to-rem(5);
   position: relative;
+  text-decoration: none;
   width: px-to-rem(140);
    
   &__img {
@@ -23,6 +26,11 @@
     font-size: px-to-rem(18);
     font-weight: $semib-font;
     line-height: px-to-rem(26);
-    padding: px-to-rem(8);
+    padding: 0 px-to-rem(8);
+
+    display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
   }
 }
