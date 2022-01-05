@@ -11,13 +11,11 @@ import './Header.scss';
 const Header = () => (
   <header className="header">
     <h1 className="header__title">Search</h1>
-    <div className="icon-spotify">
-      <FaSpotify className="header__icon header__icon--logo"/>
-    </div>
+    <FaSpotify className="header__icon header__icon--logo"/>
     <form className="search">
       <Input 
-      type="search"
-      placeholder="Artists, songs os podcasts"   
+        type="search"
+        placeholder="Artists, songs or podcasts"   
       />
       <BtnSearch type="submit" />    
     </form>
@@ -28,4 +26,4 @@ const Header = () => (
   </header>
 );
 
-export default Header
+export default Header;
