@@ -11,8 +11,8 @@ import './Header.scss';
 const Header = ({ searchKey, handleSearchKey, handleSearchArtists }) => (
   <header className="header">
     <h1 className="header__title">Search</h1>
-    <div className="icon-spotify">
-      <FaSpotify className="header__icon header__icon--logo"/>
+    <div className="icon-spotify">   
+      <FaSpotify className="header__icon header__icon--logo"/>   
     </div>
     <form className="search" onSubmit={handleSearchArtists}>
       <Input 
