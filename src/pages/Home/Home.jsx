@@ -11,19 +11,18 @@ import './Home.scss';
 
 const Home = ({ token }) => {
 
-  const [searchKey, setSearchKey] = useState("")
-  const [artists, setArtists] = useState([])
-  const [albums, setAlbums] = useState([])
-  const [severalAlbums, setSeveralAlbums] = useState([])
-  const [severalCategories, setSeveralCategories] = useState([])
+  const [artists, setArtists] = useState([]) //pesquisar artistas
+  const [albums, setAlbums] = useState([]) //pesquisar álbuns
+  const [severalAlbums, setSeveralAlbums] = useState([]) //página inicial randomica artistas
+  const [severalCategories, setSeveralCategories] = useState([]) //página inicial randomica categorias
   const [isLoading, setisLoading] = useState(false)
 
-  let navigate = useNavigate() //hook para redirecionar para a home quando o token for invalido
+  let navigate = useNavigate() //redirecionar para a home quando o token for inválido
 
   useEffect(() => {
     const getAlbums = async () => {
       const { data } = await fetchApi(`${BASE_URL}/browse/new-releases`, token)
-      setSeveralAlbums(data.albums.items)
+      setSeveralAlbums([...data.albums.items])
     }
 
     if(token) {
@@ -34,7 +33,7 @@ const Home = ({ token }) => {
   useEffect(() => {
     const getCategories = async () => {
       const { data } = await fetchApi(`${BASE_URL}/browse/categories`, token)
-      setSeveralCategories(data.categories.items)
+      setSeveralCategories([...data.categories.items])
     }
 
     if(token) {
@@ -42,11 +41,9 @@ const Home = ({ token }) => {
     }
   }, [token])
 
-  const handleSearchKey = target => setSearchKey(target.value)
-
-  const handleSearchArtists = async (event) => {
-    event.preventDefault()
-
+ 
+  const handleSearchArtists = async (event, searchKey) => {
+    event.preventDefault()    
     
     try {
       setisLoading(true)
@@ -63,22 +60,20 @@ const Home = ({ token }) => {
       setAlbums(data.albums.items)
       
     } catch (error) {
-      //console.log(error)
+      console.log(error)
     } finally {
-      setisLoading(false)
-      setSearchKey('')
+      setisLoading(false)      
     }  
   }
 
   return (
     <>
       <main className='main'>
-        <Header
-          searchKey={searchKey}
-          handleSearchKey={handleSearchKey}
+       <Header       
           handleSearchArtists={handleSearchArtists}
-        />
+        />      
 
+        {/* página inicial */}
         {(artists.length === 0 || albums.length === 0) && severalAlbums.length > 0 && (
           <section>
             <h2 className='main__title'>New Releases Albums</h2>
@@ -99,7 +94,7 @@ const Home = ({ token }) => {
 
         {(artists.length === 0 || albums.length === 0) && severalCategories.length > 0 && (
           <section>
-            <h2 className='main__title'>Categorias mais pesquisadas</h2>
+            <h2 className='main__title'>Popular Categories</h2>
             <ul className='wrapper-category'>
               {severalCategories.map((category) => (
                 <li key={category.id}>
@@ -117,6 +112,7 @@ const Home = ({ token }) => {
 
         {isLoading && <p>Carregando</p>}
 
+        {/* pesquisa */}
         {artists.length > 0 && (
           <section>
             <h2 className='main__title'>Artista</h2>
@@ -135,7 +131,7 @@ const Home = ({ token }) => {
           </section>
         )}
 
-        {albums.length > 0 && (
+       {albums.length > 0 && (
           <section>
             <h2 className='main__title'>Álbuns</h2>
             <ul className='wrapper-category'>
@@ -151,9 +147,10 @@ const Home = ({ token }) => {
               ))}
             </ul>
           </section>
-        )}     
+        )}
       </main> 
     </>  
-  )};
+  )
+};
 
 export default Home;
