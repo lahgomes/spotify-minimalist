@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Input from '../../ui/Input/Input';
-import BtnSearch from '../../ui/Button/BtnSearch';
+import Button from '../../ui/Button/Button';
 import { MdLibraryMusic } from "react-icons/md";
 import { MdHome } from "react-icons/md";
 
@@ -26,7 +26,7 @@ const Header = ({ handleSearchArtists }) => {
           searchKey={searchKey}
           handleSearchKey={handleSearchKey}  
         />
-        <BtnSearch type="submit" />    
+        <Button type="submit" />    
       </form >
       <nav className="menu">
         <MdLibraryMusic className="header__icon" />

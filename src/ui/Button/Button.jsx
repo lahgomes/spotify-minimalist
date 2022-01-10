@@ -1,15 +1,15 @@
 import React from 'react';
 import { FaSearch } from "react-icons/fa";
 
-import './BtnSearch.scss';
+import './Button.scss';
 
-const BtnSearch = ({ type = "submmit" }) => (
+const Button = ({ type = "submmit" }) => (
   <button
     type={type}
-    className="search__btn">
+    className="button__search">
     <FaSearch />
   </button>
 );
  
 
-export default BtnSearch
+export default Button
