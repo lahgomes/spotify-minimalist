@@ -22,7 +22,7 @@ const Header = ({ handleSearchArtists }) => {
       <form className="search" onSubmit={(event) => handleSearchArtists(event, searchKey)}>
         <Input 
           type="search"
-          placeholder="Artists, songs os podcasts" 
+          placeholder="Artists, songs and albums" 
           searchKey={searchKey}
           handleSearchKey={handleSearchKey}  
         />
