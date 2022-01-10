@@ -23,14 +23,13 @@
 
   &__title {
     color: $white;
+    display: -webkit-box;
     font-size: px-to-rem(18);
     font-weight: $semib-font;
     line-height: px-to-rem(26);
     padding: 0 px-to-rem(8);
-
-    display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;  
-  overflow: hidden;
+    -webkit-box-orient: vertical;  
+    -webkit-line-clamp: 2;
+    overflow: hidden;
   }
 }
