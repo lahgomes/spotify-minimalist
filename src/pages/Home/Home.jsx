@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Card from '../../components/Card/Card';
-import { geraHexadecimal } from '../../helpers/utils';
+import { colorsGenerator } from '../../helpers/colorsGenerator';
 import { BASE_URL, fetchApi } from '../../api/config';
 
 import albumimg from '../../images/album.png'
@@ -83,7 +83,7 @@ const Home = ({ token }) => {
                   <Card 
                     title={album.name} 
                     src={album.images.length > 0 ? album.images[1].url : albumimg}
-                    color={geraHexadecimal()}
+                    color={colorsGenerator()}
                     url={album.external_urls.spotify}
                   />
                 </li>
@@ -101,7 +101,7 @@ const Home = ({ token }) => {
                     <Card 
                       title={category.name} 
                       src={category.icons.length > 0 ? category.icons[0].url : albumimg}
-                      color={geraHexadecimal()}
+                      color={colorsGenerator()}
                       url="#/"
                     />
                   </li>
@@ -122,7 +122,7 @@ const Home = ({ token }) => {
                   <Card 
                     title={artist.name} 
                     src={artist.images.length > 0 ? artist.images[1].url : albumimg}
-                    color={geraHexadecimal()} 
+                    color={colorsGenerator()} 
                     url={artist.external_urls.spotify}
                   />
                 </li>
@@ -140,7 +140,7 @@ const Home = ({ token }) => {
                   <Card 
                     title={album.name} 
                     src={album.images.length > 0 ? album.images[1].url : albumimg}
-                    color={geraHexadecimal()} 
+                    color={colorsGenerator()} 
                     url={album.external_urls.spotify}
                   />
                 </li>

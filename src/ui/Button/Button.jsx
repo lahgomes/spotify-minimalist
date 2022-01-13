@@ -6,10 +6,10 @@ import './Button.scss';
 const Button = ({ type = "submmit" }) => (
   <button
     type={type}
-    className="button__search">
+    className="button">
     <FaSearch />
   </button>
 );
  
 
-export default Button
+export default Button;
