@@ -1,13 +1,13 @@
 import React from 'react';
 import Logo from '../../components/Logo/Logo';
-import Button from '../../ui/Button/Button';
+import Link from '../../ui/Link/Link';
 
 import './Login.scss';
 
 const Login = () => (
   <div className="container">
     <Logo />    
-    <Button />    
+    <Link />    
   </div>
 );
 

@@ -1,1 +1,19 @@
 @import '../../styles/_config';
+
+.main__title {
+  color: $white;
+  font-size: px-to-rem(16);
+  padding: px-to-rem(15);
+}
+
+.wrapper-category {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @media(min-width: $xs) {
+    justify-content: flex-start;
+  }
+
+}

@@ -15,7 +15,7 @@
   &__title {
     color: $white;
     font-size: px-to-rem(40);
-    padding: px-to-rem(15);
+    margin-bottom: px-to-rem(15);
 
     @media (min-width: $md) {
       display: none;
