@@ -9,6 +9,6 @@ const Input = ({ type = "search", placeholder, searchKey, handleSearchKey }) => 
     value={searchKey} 
     onChange={({ target }) => handleSearchKey(target)}   
   />
-)
+);
 
 export default Input;

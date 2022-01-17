@@ -21,4 +21,4 @@ You can access it with this [link.](https://spotify-minimalist.vercel.app/)
 
 ## Interface
 
-The design of this app was based on the Figma community layout and can be accessed from this [link.](https://www.figma.com/file/1nvSK82Kde4PV1WNo0OljB/Spotify-Redesign-Minimalist-%7C-UI-Redesenhada-(Community)?node-id=0%3A1)
+The inspiration for the design of this website was based on the Spotify layout available in the Figma community and can be accessed from this [link.](https://www.figma.com/file/1nvSK82Kde4PV1WNo0OljB/Spotify-Redesign-Minimalist-%7C-UI-Redesenhada-(Community)?node-id=0%3A1)

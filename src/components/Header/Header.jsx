@@ -36,4 +36,4 @@ const Header = ({ handleSearchArtists }) => {
   );
 }
 
-export default Header
+export default Header;
