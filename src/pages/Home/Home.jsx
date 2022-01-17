@@ -11,37 +11,32 @@ import './Home.scss';
 
 const Home = ({ token }) => {
 
-  const [artists, setArtists] = useState([]) //pesquisar artistas
-  const [albums, setAlbums] = useState([]) //pesquisar álbuns
-  const [severalAlbums, setSeveralAlbums] = useState([]) //página inicial randomica artistas
-  const [severalCategories, setSeveralCategories] = useState([]) //página inicial randomica categorias
+  const [artists, setArtists] = useState([]) 
+  const [albums, setAlbums] = useState([]) 
+  const [severalAlbums, setSeveralAlbums] = useState([]) 
+  const [severalCategories, setSeveralCategories] = useState([]) 
   const [isLoading, setisLoading] = useState(false)
 
-  let navigate = useNavigate() //redirecionar para a home quando o token for inválido
-
+  let navigate = useNavigate()   
+    
   useEffect(() => {
     const getAlbums = async () => {
       const { data } = await fetchApi(`${BASE_URL}/browse/new-releases`, token)
       setSeveralAlbums([...data.albums.items])
     }
-
-    if(token) {
-      getAlbums()
-    }
-  }, [token])
-
-  useEffect(() => {
+      
     const getCategories = async () => {
       const { data } = await fetchApi(`${BASE_URL}/browse/categories`, token)
       setSeveralCategories([...data.categories.items])
     }
 
     if(token) {
+      getAlbums()
       getCategories()
     }
   }, [token])
 
- 
+   
   const handleSearchArtists = async (event, searchKey) => {
     event.preventDefault()    
     

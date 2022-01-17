@@ -15,4 +15,3 @@ export const fetchApi = async (url, token) => {
 
   return { response, data }
 }
-

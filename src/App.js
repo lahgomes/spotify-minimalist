@@ -9,7 +9,8 @@ import './App.scss';
 function App() {
   const [token, setToken] = useState("")
 
-  useEffect(() => {
+  const getAccess = () => {
+
     const hash = window.location.hash
     let token = localStorage.getItem("token")
 
@@ -19,7 +20,13 @@ function App() {
         localStorage.setItem("token", token)
     }
 
-     setToken(token)
+    setToken(token)  
+
+  }
+  
+  useEffect(() => {
+    getAccess()
+    
   },[])
 
   return (
