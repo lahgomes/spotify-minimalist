@@ -9,7 +9,7 @@ import albumimg from '../../images/album.png'
 
 import './Home.scss';
 
-const Home = ({ token }) => {
+const Home = () => {
 
   const [artists, setArtists] = useState([]) 
   const [albums, setAlbums] = useState([]) 
@@ -21,20 +21,20 @@ const Home = ({ token }) => {
     
   useEffect(() => {
     const getAlbums = async () => {
-      const { data } = await fetchApi(`${BASE_URL}/browse/new-releases`, token)
+      const { data } = await fetchApi(`${BASE_URL}/browse/new-releases`)
       setSeveralAlbums([...data.albums.items])
     }
       
     const getCategories = async () => {
-      const { data } = await fetchApi(`${BASE_URL}/browse/categories`, token)
+      const { data } = await fetchApi(`${BASE_URL}/browse/categories`)
       setSeveralCategories([...data.categories.items])
     }
 
-    if(token) {
+    
       getAlbums()
       getCategories()
-    }
-  }, [token])
+    
+  }, [])
 
    
   const handleSearchArtists = async (event, searchKey) => {
@@ -43,10 +43,9 @@ const Home = ({ token }) => {
     try {
       setisLoading(true)
 
-      const { data, response } = await fetchApi(`${BASE_URL}/search?q=${searchKey}&type=artist,album`, token)
+      const { data, response } = await fetchApi(`${BASE_URL}/search?q=${searchKey}&type=artist,album`)
 
       if(response.status === 401) {
-        localStorage.removeItem('token')
         navigate('/')
         return
       }
